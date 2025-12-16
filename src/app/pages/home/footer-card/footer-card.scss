@@ -14,13 +14,15 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
     gap: 1.6rem;
-    padding: 3rem 0 1.5rem 0rem;
+    padding: 2.5rem 0 1.5rem 0rem;
 
     .footer-section {
-      .title {
-        border-bottom: 6px double #0891b2;
-        border-radius: 5%;
-        background: linear-gradient(135deg, #eff1f1, #0891b2);
+      .logo-content {
+        display: flex;
+        gap: 5px;
+      }
+      .logo-icon {
+        width: 40px;
       }
       h3,
       h4 {
@@ -54,7 +56,7 @@
         display: flex;
         align-items: center;
         // gap: 0.75rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
 
         .logo-icon {
           font-size: 2rem;
@@ -62,11 +64,15 @@
         }
 
         h3 {
-          margin: 0;
-          background: linear-gradient(45deg, #ffffff, #e0e7ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          font-weight: 700;
+          color: #1f2937;
+          display: flex;
+          flex-direction: column;
+          background: linear-gradient(135deg, #06b6d4, #0891b2);
           background-clip: text;
+          color: transparent;
+          position: relative;
+          margin: 0;
         }
       }
 
@@ -100,7 +106,7 @@
           }
 
           &:hover {
-            background: #2563ebcc;
+            background: #0891b2;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
           }
@@ -137,57 +143,6 @@
       font-size: 0.9rem;
       line-height: 1.5;
       margin-bottom: 1rem;
-    }
-
-    .newsletter-form form {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-
-      .newsletter-input {
-        flex: 1;
-        padding: 0.75rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 6px;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        font-size: 0.9rem;
-
-        @media (max-width: 480px) {
-          width: 100%;
-        }
-
-        &::placeholder {
-          color: #9ca3af;
-        }
-
-        &:focus {
-          outline: none;
-          border-color: #60a5fa;
-          box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
-        }
-      }
-
-      .newsletter-btn {
-        padding: 0.75rem 1rem;
-        background: linear-gradient(135deg, #06b6d4, #0891b2);
-        box-shadow: 0 2px 6px rgba(6, 182, 212, 0.3019607843);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-
-        &:hover {
-          background: linear-gradient(135deg, #0891b2, #0e7490);
-          transform: translateY(-1px);
-          box-shadow: 0 4px 8px rgba(6, 182, 212, 0.3019607843);
-        }
-      }
     }
 
     .contact-info {
@@ -238,7 +193,7 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: #60a5fa;
+            color: #0891b2;
           }
         }
       }

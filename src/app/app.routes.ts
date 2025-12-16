@@ -11,9 +11,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./layout/about-layout/about-layout').then(
-        (layout) => layout.AboutLayout
-      ),
+      import('./layout/about-layout/about-layout').then((layout) => layout.AboutLayout),
     children: [
       //@_contact-us routes
       {
@@ -43,17 +41,7 @@ export const routes: Routes = [
       {
         path: 'terms-and-conditions',
         loadComponent: () =>
-          import('./pages/about/c-terms/c-terms').then(
-            (company) => company.CTerms
-          ),
-      },
-      //@_donate routes
-      {
-        path: 'donate',
-        loadComponent: () =>
-          import('./pages/about/c-donate/c-donate').then(
-            (company) => company.CDonate
-          ),
+          import('./pages/about/c-terms/c-terms').then((company) => company.CTerms),
       },
     ],
   },
@@ -62,8 +50,6 @@ export const routes: Routes = [
   {
     path: 'about',
     loadComponent: () =>
-      import('./pages/about/c-about-us/c-about-us').then(
-        (about) => about.CAboutUs
-      ),
+      import('./pages/about/c-about-us/c-about-us').then((about) => about.CAboutUs),
   },
 ];

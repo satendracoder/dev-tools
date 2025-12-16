@@ -1,67 +1,65 @@
 <!-- Hero Section -->
 <section class="hero">
+
+  <svg class="mesh-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="meshGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.25" />
+      </linearGradient>
+    </defs>
+
+    <path d="M0 300 Q200 200 400 300 T800 300" fill="none" stroke="url(#meshGradient)" stroke-width="1.5">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+        M0 300 Q200 200 400 300 T800 300;
+        M0 300 Q200 250 400 280 T800 300;
+        M0 300 Q200 200 400 300 T800 300" />
+    </path>
+  </svg>
+
   <div class="hero-container">
     <div class="hero-content">
       <div class="hero-badge">
-        <span class="badge-icon">🚀</span>
-        <span>Interactive Learning Platform</span>
+        <h1>Free Online Developer Tools</h1>
       </div>
 
-      <h1 class="hero-title">Master Coding. Build Your Future.</h1>
+      <h1 class="hero-title">Secure, fast & easy-to-use tools for everyday coding tasks</h1>
 
       <p class="hero-subtitle">
-        Master Full Stack Development (HTML, CSS, JavaScript, Angular, Java & Spring Boot) with DSA practice, Handbooks,
-        Mock Tests and an Online Compiler.
+        Format, validate, convert, minify, encode, decode & analyze your code —
+        all tools are browser-based and free to use.
       </p>
 
 
       <div class="hero-actions">
         <a routerLink="/courses" class="btn btn-primary">
           <span class="btn-icon">⌯⌲</span>
-          Explore Courses
+          Browse by Category
         </a>
 
-        <a routerLink="/auth/register" class="btn btn-outline"> <span class="btn-icon">➜]</span> Sign Up Today </a>
       </div>
 
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">100+</span>
-          <span class="stat-label">DSA Problems</span>
-        </div>
 
-        <div class="stat-item">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Handbooks & Tutorials</span>
-        </div>
-
-        <div class="stat-item">
-          <span class="stat-number">5+</span>
-          <span class="stat-label">Courses</span>
-        </div>
-
-
-      </div>
     </div>
 
 
     <div class="hero-image">
       <div class="image-container">
-        <img src="/assets/images/global/satu.webp" alt="dev-tools Learning Illustration" />
+        <img src="/assets/images/global/banner_img.png" alt="SatendraCoder Learning Illustration" />
 
         <div class="floating-card card-1">
           <div class="card-icon">📘</div>
           <div class="card-content">
-            <span class="card-title">Software Engineer</span>
-            <span class="card-subtitle">•Angular • Java</span>
+            <span class="card-title">Security & Encoding</span>
+            <span class="card-subtitle">Developer Utilities</span>
           </div>
         </div>
 
         <div class="floating-card card-2">
           <div class="card-icon">🧠</div>
           <div class="card-content">
-            <span class="card-title">DSA & Problem Solving</span>
-            <span class="card-subtitle">200+ Coding Questions</span>
+            <span class="card-title">Data Viewers & Editors</span>
+            <span class="card-subtitle">JSON, XML, HTML, and Markdown.</span>
           </div>
         </div>
       </div>

@@ -1,12 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  Signal,
-  inject,
-} from '@angular/core';
-import { MateriallistModule } from '../../../materiallist/materiallist-module';
+import { Component, EventEmitter, Input, Output, Signal, inject } from '@angular/core';
+import { MateriallistModule } from '../../materiallist/materiallist-module';
 
 @Component({
   selector: 'app-c-theme-toggle',

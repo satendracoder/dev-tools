@@ -12,44 +12,54 @@ export class FaqCard {
 
   faqs = [
     {
-      question: 'What is Satendra Coder?',
+      question: 'What is this Developer Tools platform?',
       answer:
-        'Satendra Coder is a learning platform that provides handbooks, DSA sheets, mock tests, interview questions, AI resources, blogs, roadmaps, and coding practice for students and developers.',
+        'This platform provides free online developer tools to help web developers, software engineers, and programmers work faster and more efficiently.',
     },
     {
-      question: 'Who can benefit from Satendra Coder?',
+      question: 'Who can use these developer tools?',
       answer:
-        'Beginners, students, and developers who want to learn programming, improve skills, prepare for interviews, or build a full-stack career.',
+        'Web developers, frontend developers, backend developers, full-stack developers, students, and software engineers can use these tools.',
     },
     {
-      question: 'Which skills can I learn here?',
+      question: 'Are these tools free to use?',
       answer:
-        'You can learn HTML, CSS, JavaScript, TypeScript, Angular, Java, Spring Boot, Docker, Microservices, MySQL, NoSQL, and AI tools with structured notes and examples.',
+        'Yes, all developer tools available on this platform are completely free to use with no registration required.',
     },
     {
-      question: 'What learning resources are available?',
+      question: 'What types of developer tools are available?',
       answer:
-        'We offer Handbooks, DSA Sheets, Roadmaps, Interview Questions, Mock Tests, AI Engineer guides, Online Compiler, and daily updated blogs.',
+        'We provide security tools, code formatters, validators, converters, viewers, editors, SEO tools, minifiers, and various developer utilities.',
     },
     {
-      question: 'Is all the content free?',
+      question: 'Are these tools safe and secure?',
       answer:
-        'Yes, most handbooks, sheets, interview questions, and practice resources are free. Some advanced courses may be premium in the future.',
+        'Yes, all tools run securely in your browser. Your code and data are not stored or shared with any third party.',
     },
     {
-      question: 'Do I need to create an account?',
+      question: 'Do I need to install any software?',
       answer:
-        'No. You can access most content without login. Creating an account helps track progress and unlock upcoming features.',
+        'No installation is required. All tools work directly in your browser on desktop, tablet, and mobile devices.',
     },
     {
-      question: 'Does Satendra Coder support PWA installation?',
+      question: 'Which formats and languages are supported?',
       answer:
-        'Yes, the platform supports PWA. You can install it on desktop or mobile for faster access and app-like performance.',
+        'The tools support JSON, XML, HTML, CSS, JavaScript, CSV, Markdown, and other commonly used developer formats.',
     },
     {
-      question: 'How can I request new topics or improvements?',
+      question: 'Can I use these tools for professional projects?',
       answer:
-        'You can suggest new features, topics, or improvements anytime through the feedback section or the community page.',
+        'Yes, these tools are suitable for learning, testing, debugging, and professional development work.',
+    },
+    {
+      question: 'Are these tools optimized for performance?',
+      answer:
+        'Yes, the tools are designed to be fast, lightweight, and optimized for a smooth developer experience.',
+    },
+    {
+      question: 'Will more developer tools be added in the future?',
+      answer:
+        'Yes, we regularly add new developer tools and improve existing ones based on developer needs and feedback.',
     },
   ];
 

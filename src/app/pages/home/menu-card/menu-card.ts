@@ -1,20 +1,11 @@
 import { Component, effect, HostListener, inject, Signal } from '@angular/core';
 import { MateriallistModule } from '../../../shared/materiallist/materiallist-module';
-import { TruncateTextPipe } from '../../../shared/pipes/truncate-text/truncate-text-pipe';
-import {
-  RouterLink,
-  RouterLinkActive,
-  RouterLinkWithHref,
-} from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginPage } from '../../../auth/login-page/login-page';
 import { SSafeStorage } from '../../../core/service/global/safe-storage/s-safe-storage';
 import { ScButtonComponent } from '../../../shared/components/button/sc-button/sc-button.component';
-import { CThemeToggle } from '../../../shared/components/global/c-theme-toggle/c-theme-toggle';
 import { STheme } from '../../../core/service/global/theme/s-theme';
-import { CallbackDialogComponent } from '../../../shared/components/global/callback-dialog/callback-dialog.component';
-import { AvatarPipePipe } from '../../../shared/pipes/avatar/avatar-pipe.pipe';
-import { BehaviorSubject } from 'rxjs';
+import { CThemeToggle } from '../../../shared/components/c-theme-toggle/c-theme-toggle';
 
 interface MenuItem {
   label: string;
@@ -31,15 +22,7 @@ interface User {
 
 @Component({
   selector: 'app-menu-card',
-  imports: [
-    MateriallistModule,
-    TruncateTextPipe,
-    RouterLink,
-    RouterLinkWithHref,
-    ScButtonComponent,
-    CThemeToggle,
-    AvatarPipePipe,
-  ],
+  imports: [MateriallistModule, RouterLink, RouterLinkWithHref, CThemeToggle, ScButtonComponent],
   templateUrl: './menu-card.html',
   styleUrl: './menu-card.scss',
 })
@@ -78,53 +61,217 @@ export class MenuCard {
   ngOnInit(): void {}
 
   menuItems: MenuItem[] = [
+    // Security
     {
-      label: 'Grow Learn',
+      label: 'Security',
       hasDropdown: true,
       dropdownItems: [
         {
-          name: 'Learn Handbooks',
-          link: '/handbooks',
-        },
-        {
-          name: 'DSA Sheets',
+          name: 'JWT Generator',
           link: '/dsa-sheets',
         },
         {
-          name: 'AI Engineer',
+          name: 'Base64 Encoder / Decoder',
           link: '/generative-ai',
         },
 
         {
-          name: 'Practice Mock Tests',
+          name: 'URL Encoder / Decoder',
           link: '/mock-tests',
         },
         {
-          name: 'Interview Questions',
+          name: 'Password Hash Generator',
+          link: '/interview',
+        },
+        {
+          name: 'Password Strength Checker',
+          link: '/interview',
+        },
+
+        {
+          name: 'MD5 Generator',
           link: '/interview',
         },
       ],
     },
+
+    // Viewers
+    {
+      label: 'Viewers',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'JSON Viewer & Editor',
+          link: '/handbooks',
+        },
+        {
+          name: 'XML Viewer & Editor',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'HTML Editor Online',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'Code Diff Checker',
+          link: '/mock-tests',
+        },
+        {
+          name: 'Markdown Editor (Write & Preview)',
+          link: '/interview',
+        },
+      ],
+    },
+
+    //
+    {
+      label: 'Formatters',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'HTML Formatter',
+          link: '/handbooks',
+        },
+        {
+          name: 'CSS Formatter',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'JavaScript Formatter',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'JSON Formatter',
+          link: '/mock-tests',
+        },
+        {
+          name: 'XML Formatter',
+          link: '/interview',
+        },
+      ],
+    },
+
+    // Minifiers
+    {
+      label: 'Minifiers',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'Minify HTML',
+          link: '/handbooks',
+        },
+        {
+          name: 'Minify CSS',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'Minify JavaScript',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'Minify JSON',
+          link: '/mock-tests',
+        },
+        {
+          name: 'Minify XML',
+          link: '/interview',
+        },
+      ],
+    },
+
+    // Code Validators
+    {
+      label: 'Code Validators',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'HTML Validator',
+          link: '/handbooks',
+        },
+        {
+          name: 'CSS Validator',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'JavaScript Validator',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'W3C Validator (HTML/CSS)',
+          link: '/mock-tests',
+        },
+        {
+          name: 'Responsive Design Checker',
+          link: '/interview',
+        },
+      ],
+    },
+
+    // Converters
+    {
+      label: 'Converters',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'JSON → XML Converter',
+          link: '/handbooks',
+        },
+        {
+          name: 'XML → JSON Converter',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'JSON → CSV Converter',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'CSV → JSON Converter',
+          link: '/mock-tests',
+        },
+        {
+          name: 'HTML → JSX Converter',
+          link: '/interview',
+        },
+      ],
+    },
+
+    {
+      label: 'Utilities',
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          name: 'Robots.txt Generator',
+          link: '/handbooks',
+        },
+        {
+          name: 'Sitemap.xml Generator',
+          link: '/dsa-sheets',
+        },
+        {
+          name: 'Favicon Generator',
+          link: '/generative-ai',
+        },
+
+        {
+          name: 'Regex Tester',
+          link: '/mock-tests',
+        },
+        {
+          name: 'UUID Generator',
+          link: '/interview',
+        },
+        {
+          name: 'CSS & Layout Generators',
+          link: '',
+        },
+      ],
+    },
   ];
-
-  // Simulate login/logout for demo purposes
-  toggleLogin(): void {
-    if (this.isLoggedIn) {
-      this.logout();
-    } else {
-      this.login();
-    }
-  }
-
-  private login(): void {
-    const dialogRef = this.dialog.open(LoginPage, {
-      panelClass: 'custom-dialog',
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      // console.log(`Dialog result: ${result}`);
-    });
-  }
 
   private logout(): void {
     this.safestorage.removeItem('userdata');
@@ -136,12 +283,10 @@ export class MenuCard {
   toggleDropdown(menuLabel: string): void {
     if (this.isMobileMenuOpen) {
       // Mobile behavior - toggle dropdown
-      this.activeDropdown =
-        this.activeDropdown === menuLabel ? null : menuLabel;
+      this.activeDropdown = this.activeDropdown === menuLabel ? null : menuLabel;
     } else {
       // Desktop behavior - toggle dropdown
-      this.activeDropdown =
-        this.activeDropdown === menuLabel ? null : menuLabel;
+      this.activeDropdown = this.activeDropdown === menuLabel ? null : menuLabel;
     }
   }
 
@@ -172,14 +317,8 @@ export class MenuCard {
       this.closeDropdowns();
     } else if (navItem && !this.isMobileMenuOpen) {
       // Desktop: close other dropdowns when clicking different nav item
-      const clickedItem = navItem
-        .querySelector('.nav-link')
-        ?.textContent?.trim();
-      if (
-        clickedItem &&
-        this.activeDropdown &&
-        this.activeDropdown !== clickedItem
-      ) {
+      const clickedItem = navItem.querySelector('.nav-link')?.textContent?.trim();
+      if (clickedItem && this.activeDropdown && this.activeDropdown !== clickedItem) {
         this.activeDropdown = clickedItem;
       }
     }
@@ -191,10 +330,8 @@ export class MenuCard {
   }
 
   callBack() {
-    this.dialog.closeAll();
-    this.dialog.open(CallbackDialogComponent, {
-      width: '420px',
-      panelClass: 'custom-dialog-container',
-    });
+    console.log('Button clicked, attempting redirect...');
+    debugger;
+    window.location.href = 'https://satendracoder.com/';
   }
 }

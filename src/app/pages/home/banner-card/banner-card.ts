@@ -7,8 +7,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { MateriallistModule } from '../../../shared/materiallist/materiallist-module';
-import { link } from 'fs';
-import { ScButtonComponent } from '../../../shared/components/button/sc-button/sc-button.component';
 
 @Component({
   selector: 'app-banner-card',
@@ -63,8 +61,7 @@ export class BannerCard implements OnInit, OnDestroy {
     },
     {
       heading: 'Master Java + Spring Boot',
-      description:
-        'Build secure, production-ready APIs using Java, Spring Boot, JPA, and REST.',
+      description: 'Build secure, production-ready APIs using Java, Spring Boot, JPA, and REST.',
       features: [
         { icon: '🚀', text: 'RESTful APIs' },
         { icon: '🔐', text: 'JWT Auth & Security' },

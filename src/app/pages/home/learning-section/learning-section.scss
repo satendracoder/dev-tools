@@ -9,23 +9,27 @@
   .container {
     max-width: 1300px;
     width: 100%;
-    margin: 0 auto;
+    margin: 10px auto;
   }
 
   .header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
     color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .title {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
-      background: linear-gradient(6deg, var(--text-color) 20%, #f97316 80%);
+      background: linear-gradient(135deg, #f97316, var(--text-color));
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      color: transparent;
+      position: relative;
 
       @media (max-width: 768px) {
         font-size: 2.2rem;
@@ -50,11 +54,24 @@
         font-size: 0.95rem;
       }
     }
+
+    .header-right {
+      a {
+        text-decoration: none;
+
+        &:hover {
+          background: linear-gradient(135deg, #0891b2, #0e7490);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 8px rgba(6, 182, 212, 0.3019607843);
+          color: #fff;
+        }
+      }
+    }
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 
     @media (max-width: 992px) {
@@ -70,7 +87,7 @@
     background: var(--background-color);
     border: 1px solid #2a2a2a;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -80,20 +97,20 @@
     overflow: hidden;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      color: white;
+      background: linear-gradient(135deg, #0891b2, #0e7490);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px #06b6d44d;
+      color: #fff !important;
 
       .info {
-        color: #fff;
+        color: #fff !important;
       }
     }
 
     .icon {
       font-size: 2rem;
       background: var(--secondary-background);
-      color: #fff;
+      color: var(--text-color);
       border-radius: 10px;
       width: 48px;
       height: 48px;

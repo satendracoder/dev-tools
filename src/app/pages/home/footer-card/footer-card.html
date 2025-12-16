@@ -4,28 +4,27 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <div class="logo-content">
-                        <span class="logo-icon"></span>
-                        <h3 class="title">Satendra Coder</h3>
+                        <img class="logo-icon" src="/icons/favicon.svg" alt="DevTools Hub" srcset="">
+                        <h3 class="title">DevTools Hub</h3>
                     </div>
                     <p class="footer-description">
-                        Learn Full Stack Development, AI Engineer, DSA, interview prep, kids coding & communication
-                        skills.
-                        Join our community of developers and elevate your coding journey with us!
+                        Free online developer tools for web developers – JSON tools, formatters, converters, validators,
+                        security & SEO utilities. Fast, secure & easy to use.
                     </p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/dev-tools" target="_blank" class="social-link">
+                        <a href="https://linkedin.com/in/satendracoder" target="_blank" class="social-link">
                             <img src="/assets/icons/social/linkedin.svg" alt="Facebook" class="social-icon">
                         </a>
-                        <a href="https://github.com/dev-tools" target="_blank" class="social-link">
+                        <a href="https://github.com/satendracoder" target="_blank" class="social-link">
                             <img src="/assets/icons/social/github.svg" alt="" srcset="">
                         </a>
-                        <a href="https://www.instagram.com/dev-tools" target="_blank" class="social-link">
+                        <a href="https://www.instagram.com/satendracoder" target="_blank" class="social-link">
                             <img src="/assets/icons/social/instagram.svg" alt="">
                         </a>
                         <a href="https://wa.me/918859758708" target="_blank" class="social-link">
                             <img src="/assets/icons/social/whatsapp.svg" alt="">
                         </a>
-                        <a href="https://www.youtube.com/@dev-tools" target="_blank" class="social-link">
+                        <a href="https://www.youtube.com/@satendracoder" target="_blank" class="social-link">
                             <img src="/assets/icons/social/youtube.svg" alt="">
                         </a>
                     </div>
@@ -33,27 +32,37 @@
             </div>
 
             <div class="footer-section">
-                <h4>For Grow Learn</h4>
+                <h4>Security Tools</h4>
                 <ul class="footer-links">
-                    <li><a routerLink="/handbooks">Learn Handbooks</a></li>
-                    <li><a routerLink="/dsa-sheets">DSA Sheets</a></li>
-                    <li><a routerLink="/handbooks"> AI Engineer</a></li>
-                    <li><a routerLink="/mock-tests">Practice Mock Tests</a></li>
-                    <li><a routerLink="/interview/">Interview Questions</a></li>
+                    <li><a routerLink="/handbooks">JWT Decoder & Generator</a></li>
+                    <li><a routerLink="/dsa-sheets">Password Hash</a></li>
+                    <li><a routerLink="/handbooks"> MD5 Generator</a></li>
+                    <li><a routerLink="/mock-tests">Base64 Encoder / Decoder </a></li>
+                    <li><a routerLink="/interview/">URL Encoder / Decoder</a></li>
 
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4 class="coures">Courses
-                    <span>Coming Soon</span>
+                <h4 class="coures">Viewers & Editors
                 </h4>
                 <ul class="footer-links">
-                    <li><a routerLink="/courses/html-css-mastery">HTML & CSS Mastery</a></li>
-                    <li><a routerLink="/courses/angular-complete-guide">Angular 17+ Course</a></li>
-                    <li><a routerLink="/courses/javascript-zero-to-hero">Advanced JavaScript</a></li>
-                    <li><a routerLink="/courses/frontend-combo-package">Frontend(Combo package)</a></li>
-                    <!-- <li><a routerLink="/courses/dsa-javascript">DSA</a></li> -->
+                    <li><a routerLink="/courses/html-css-mastery">JSON Viewer & Editor</a></li>
+                    <li><a routerLink="/courses/angular-complete-guide">XML Viewer & Editor</a></li>
+                    <li><a routerLink="/courses/javascript-zero-to-hero">HTML Editor Online</a></li>
+                    <li><a routerLink="/courses/frontend-combo-package">Responsive Design Checker</a></li>
+                    <li><a routerLink="/courses/dsa-javascript">Code Diff Checker</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Data Converters</h4>
+                <ul class="footer-links">
+                    <li><a routerLink="/about">JSON → XML Converter</a></li>
+                    <li><a routerLink="/contact-us">XML → JSON Converter </a></li>
+                    <li><a routerLink="/privacy-policy">JSON → CSV Converter</a></li>
+                    <li><a routerLink="/terms-and-conditions">CSV → JSON Converter</a></li>
+                    <li><a routerLink="/pricing-policy">HTML → JSX Converter</a></li>
                 </ul>
             </div>
 
@@ -68,50 +77,19 @@
                 </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Stay Connected</h4>
-                <p class="newsletter-text">Get the latest newsletter delivered straight to your inbox.</p>
-                <div class="newsletter-form">
-                    <form #newsletterForm="ngForm" (ngSubmit)="onSubmit(newsletterForm)">
 
-                        <div class="form-group">
-                            <input type="email" name="email" ngModel required #email="ngModel"
-                                placeholder="Enter your email" class="newsletter-input">
-                        </div>
 
-                        <div class="error" *ngIf="email.invalid && email.touched">
-                            Email is required!
-                        </div>
-
-                        <button type="submit" class="newsletter-btn">
-                            Subscribe
-                        </button>
-
-                    </form>
-
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>satendracaria&#64;gmail.com</span>
-                    </div>
-                    <!-- <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <span>+91 00 758 00</span>
-                    </div> -->
-                </div>
-            </div>
         </div>
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>&copy; {{currentYear}} Satendra Coder. All rights reserved.</p>
+                <p>&copy; {{currentYear}} DevTools Hub by Satendra Coder. All rights reserved.</p>
                 <div class="footer-bottom-links">
-                    <a routerLink="blog">Our Blogs</a>
-                    <a routerLink="/tools">Developer Tools</a>
-                    <a routerLink="/roadmap">Roadmaps</a>
-                    <a routerLink="/donate">Donate</a>
-                    <a href="https://me.dev-tools.com/" target="_blank">Who am I?</a>
+                    <a href="https://satendracoder.com/courses" target="_blank">Our Courses</a>
+                    <a href="https://satendracoder.com/handbooks" target="_blank">Learn Handbooks</a>
+                    <a href="https://satendracoder.com/dsa-sheets" target="_blank">DSA practice</a>
+                    <a href="https://satendracoder.com/compiler" target="_blank">Compiler</a>
+                    <a href="https://me.satendracoder.com/" target="_blank">Who am I?</a>
                 </div>
             </div>
         </div>
