@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, inject, SimpleChanges } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ScAngularToastify, ToastService } from 'sc-angular-toastify';
+import { ScAngularLoader } from 'sc-angular-loader';
+import { ChatBotComponent } from './shared/components/global/chat-bot/chat-bot.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ScAngularToastify, ScAngularLoader, ChatBotComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('dev-tools');
+  protected title = 'dev-tools';
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+  }
 }

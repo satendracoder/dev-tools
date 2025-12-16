@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="container">
+    <h4 class="sub-title">TOP SELECTED</h4>
+    <h2 class="main-title">Mentorship from Industry</h2>
+    <p>Get guidance from experienced mentors in development, tech careers, and projects.</p>
+
+    <div class="carousel">
+      <!-- Left Arrow -->
+      <button class="arrow left" (click)="prevSlide()"
+        [disabled]="currentIndex === 0"><mat-icon>keyboard_arrow_left</mat-icon></button>
+
+      <!-- Slide Track -->
+      <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex * (100 / itemsPerView)) + '%)'">
+        @for (trainer of trainers; track trainer) {
+        <div class="trainer-card" [style.flex]="'0 0 ' + (100 / itemsPerView) + '%'">
+          <div class="trainer-img">
+            <img [src]="trainer.img" [alt]="trainer.name">
+          </div>
+          <h3>{{ trainer.name }}</h3>
+          <p>{{ trainer.role }}</p>
+        </div>
+        }
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="arrow right" (click)="nextSlide()"
+        [disabled]="currentIndex >= trainers.length - itemsPerView"><mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+
+    <!-- <button class="btn-primary" routerLink="/become-a-member">Join as a Mentee →</button> -->
+  </div>
+</div>

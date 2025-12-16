@@ -1,0 +1,218 @@
+<nav class="navigation">
+  <div class="nav-container">
+    <!-- Logo Section -->
+    <div class="nav-brand">
+      <div class="logo" routerLink="/">
+        <div class="logo-icon"><img src="/assets/images/global/logo.svg" alt=""></div>
+        <span class="brand-name">
+          <span class="logo-title">Satendra Coder</span>
+          <span class="sub-title">Software Developer Engineer</span>
+        </span>
+
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" [class.mobile-open]="isMobileMenuOpen">
+      <div class="nav-items">
+
+        <!-- Dynamic Menu Items -->
+        @for (item of menuItems; track item) {
+        <div class="nav-item" [class.active]="activeDropdown === item.label">
+          <span class="nav-link"
+            (click)="item.hasDropdown ? toggleDropdown(item.label) : closeMobileMenu(); $event.stopPropagation()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#26a69a">
+              <path
+                d="M480-60q-72-68-165-104t-195-36v-440q101 0 194 36.5T480-498q73-69 166-105.5T840-640v440q-103 0-195.5 36T480-60Zm0-104q63-47 134-75t146-37v-276q-73 13-143.5 52.5T480-394q-66-66-136.5-105.5T200-552v276q75 9 146 37t134 75Zm0-436q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-760q0-33-23.5-56.5T480-840q-33 0-56.5 23.5T400-760q0 33 23.5 56.5T480-680Zm0-80Zm0 366Z" />
+            </svg>{{ item.label }}
+            @if (item.hasDropdown) {
+            <svg class="dropdown-arrow" [class.rotated]="activeDropdown === item.label" width="12" height="8"
+              viewBox="0 0 12 8" fill="none">
+              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            }
+          </span>
+          <!-- Dropdown Menu -->
+          @if (item.hasDropdown && activeDropdown === item.label) {
+          <div class="dropdown-menu" (click)="$event.stopPropagation()">
+            <div class="dropdown-content">
+              @for (dropdownItem of item.dropdownItems; track dropdownItem) {
+              <a href="#" class="dropdown-item"
+                (click)="$event.preventDefault(); $event.stopPropagation(); closeMobileMenu()">
+                <a [routerLink]="dropdownItem?.link"> {{ dropdownItem?.name }}</a>
+              </a>
+              }
+            </div>
+          </div>
+          }
+        </div>
+        }
+
+        <!-- Course -->
+        <div class="nav-item support-item">
+          <span class="nav-link support-link_1" routerLink="/courses" routerLinkActive="active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f97316">
+              <path
+                d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z" />
+            </svg>
+            Courses
+          </span>
+        </div>
+
+        <!-- Roadmaps Others -->
+        <div class="nav-item support-item">
+          <span class="nav-link support-link" routerLink="/roadmap" routerLinkActive="active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#26a69a">
+              <path
+                d="M360-120q-66 0-113-47t-47-113v-327q-35-13-57.5-43.5T120-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 69.5T280-607v327q0 33 23.5 56.5T360-200q33 0 56.5-23.5T440-280v-400q0-66 47-113t113-47q66 0 113 47t47 113v327q35 13 57.5 43.5T840-240q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-39 22.5-70t57.5-43v-327q0-33-23.5-56.5T600-760q-33 0-56.5 23.5T520-680v400q0 66-47 113t-113 47ZM240-680q17 0 28.5-11.5T280-720q0-17-11.5-28.5T240-760q-17 0-28.5 11.5T200-720q0 17 11.5 28.5T240-680Zm480 480q17 0 28.5-11.5T760-240q0-17-11.5-28.5T720-280q-17 0-28.5 11.5T680-240q0 17 11.5 28.5T720-200ZM240-720Zm480 480Z" />
+            </svg>
+            Roadmaps
+          </span>
+        </div>
+
+        <!-- Compilers Others -->
+        <div class="nav-item support-item">
+          <span class="nav-link support-link" routerLink="/compiler" routerLinkActive="active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#26a69a">
+              <path
+                d="M344-336 200-480l144-144 56 57-87 87 87 87-56 57Zm272 0-56-57 87-87-87-87 56-57 144 144-144 144ZM200-120q-33 0-56.5-23.5T120-200v-160h80v160h160v80H200Zm400 0v-80h160v-160h80v160q0 33-23.5 56.5T760-120H600ZM120-600v-160q0-33 23.5-56.5T200-840h160v80H200v160h-80Zm640 0v-160H600v-80h160q33 0 56.5 23.5T840-760v160h-80Z" />
+            </svg>
+            Compilers
+          </span>
+        </div>
+
+        <!-- Blogs Others -->
+        <div class="nav-item support-item">
+          <span class="nav-link support-link" routerLink="/blog" routerLinkActive="active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#26a69a">
+              <path
+                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z" />
+            </svg>
+            Blogs
+          </span>
+        </div>
+
+
+      </div>
+
+      <!-- User Actions -->
+      <div class="nav-actions">
+        <app-c-theme-toggle [selectedTheme]="selectedTheme" (themeChanged)="onThemeChange($event)"></app-c-theme-toggle>
+
+        @if (isLoggedIn) {
+
+        <!-- Logged In User Profile -->
+        <div class="user-profile-dropdown" [class.active]="activeDropdown === 'user-profile'">
+          <div class="user-info" (click)="toggleDropdown('user-profile'); $event.stopPropagation()">
+            <div class="user-avatar">
+              @if (avatarUser) {
+              <span>{{ avatarUser?.name | avatarPipe }}</span>
+              }
+              @if (!avatarUser) {
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" />
+                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none" />
+              </svg>
+              }
+            </div>
+            <div class="user-details">
+              <span class="user-name">{{ currentUser?.name | truncateText:12}}</span>
+              <span class="user-email">{{ currentUser?.email | truncateText:20}}</span>
+            </div>
+            <svg class="dropdown-arrow" [class.rotated]="activeDropdown === 'user-profile'" width="12" height="8"
+              viewBox="0 0 12 8" fill="none">
+              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <!-- User Dropdown Menu -->
+          @if (activeDropdown === 'user-profile') {
+          <div class="user-dropdown-menu" (click)="$event.stopPropagation()">
+            <div class="user-dropdown-content">
+              <a routerLink="/dashboard/user-profile" class="user-dropdown-item"
+                (click)="$event.preventDefault(); $event.stopPropagation(); closeMobileMenu()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" />
+                  <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                My Profile
+              </a>
+              <a href="#" class="user-dropdown-item"
+                (click)="$event.preventDefault(); $event.stopPropagation(); closeMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#1f1f1f">
+                  <path
+                    d="M880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720Zm-720 80h640v-80H160v80Zm0 160v240h640v-240H160Zm0 240v-480 480Z" />
+                </svg>
+                My Purchases
+              </a>
+              <a href="#" class="user-dropdown-item"
+                (click)="$event.preventDefault(); $event.stopPropagation(); closeMobileMenu()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                    stroke="currentColor" stroke-width="2" />
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                Settings
+              </a>
+
+              <div class="dropdown-divider"></div>
+              <a href="#" class="user-dropdown-item logout-item"
+                (click)="$event.preventDefault(); $event.stopPropagation(); toggleLogin(); closeMobileMenu()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2" />
+                  <polyline points="16,17 21,12 16,7" stroke="currentColor" stroke-width="2" />
+                  <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" />
+                </svg>
+                Logout
+              </a>
+            </div>
+          </div>
+          }
+        </div>
+        } @else {
+        <app-sc-button variant="primary" label="Request a Callback" (scClick)="callBack()">
+        </app-sc-button>
+        <!-- Login Button for Guests -->
+        <div routerLink="/auth/login" class="user-profile" (click)="closeMobileMenu()">
+          <div class="profile-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" />
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none" />
+            </svg>
+          </div>
+          <span class="login-text">Login</span>
+        </div>
+
+        }
+      </div>
+    </div>
+
+
+    <!-- Mobile Menu Toggle -->
+
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+
+      @if (!isMobileMenuOpen) {
+      <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1.8em" height="1.8em">
+        <path
+          d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 000 13.8z">
+        </path>
+      </svg>
+      } @else {
+      <svg xmlns="http://www.w3.org/2000/svg" height="1.8rem" viewBox="0 -960 960 960" width="1.8em"
+        fill="currentColor">
+        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+      </svg>
+      }
+    </button>
+
+
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+</nav>

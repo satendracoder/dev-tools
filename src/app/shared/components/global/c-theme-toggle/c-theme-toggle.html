@@ -1,0 +1,15 @@
+<div class="theme-toggle">
+
+    @if (selectedTheme==='light') {
+    <button [class.active]="selectedTheme === 'light'" (click)="setTheme()" aria-label="Light Theme">
+        <span class="material-icons">light_mode</span>
+    </button>
+    } @else {
+    <button [class.active]="selectedTheme === 'dark'" (click)="setTheme()" aria-label="Dark Theme">
+        <span class="material-icons">dark_mode</span>
+    </button>
+    }
+
+
+
+</div>

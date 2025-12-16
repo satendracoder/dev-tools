@@ -1,0 +1,41 @@
+<app-menu-card></app-menu-card>
+
+@if (isRoadmapRoute()) {
+<!-- 💡 CATEGORY FILTER + ROADMAP LIST -->
+<section class="roadmap-section">
+    <div class="container">
+        <h2 class="section-title">Explore Developer Roadmaps</h2>
+        <p class="section-subtitle">Choose a category and start exploring curated paths for your career.</p>
+
+        <!-- 🔹 Filter Bar -->
+        <div class="category-bar">
+            <div *ngFor="let cat of categories" class="category-chip" [class.active]="cat === selectedCategory"
+                (click)="selectCategory(cat)">
+                <i class="fa fa-layer-group"></i>
+                <span>{{ cat }}</span>
+            </div>
+        </div>
+
+        <!-- 🔹 Topics Grid -->
+        <div class="topics-grid">
+            <div *ngFor="let topic of filteredTopics()" class="topic-card" (click)="openTopicDetails(topic)">
+                <div class="card-header">
+                    <div class="icon-circle">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <div class="title-row">
+                        <h3>{{ topic.name }}</h3>
+                        <span class="category-label">{{ topic.category || 'General' }}</span>
+                    </div>
+                </div>
+                <p class="short">{{ topic.short }}</p>
+                <div *ngIf="topic.newBadge" class="badge">New</div>
+            </div>
+        </div>
+    </div>
+</section>
+} @else {
+<router-outlet (activate)="isRoadmapRoute.set(false)" (deactivate)="isRoadmapRoute.set(true)"></router-outlet>
+}
+<app-global-contact></app-global-contact>
+<app-footer-card></app-footer-card>
