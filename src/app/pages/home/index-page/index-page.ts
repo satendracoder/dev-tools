@@ -2,15 +2,14 @@ import { Component, inject } from '@angular/core';
 import { MenuCard } from '../menu-card/menu-card';
 import { BannerCard } from '../banner-card/banner-card';
 import { FooterCard } from '../footer-card/footer-card';
-import { LearningSection } from '../learning-section/learning-section';
-import { FaqCard } from '../faq-card/faq-card';
 import { MateriallistModule } from '../../../shared/materiallist/materiallist-module';
 import { SSeo } from '../../../core/service/other/seo/s-seo';
 import { SSafeStorage } from '../../../core/service/global/safe-storage/s-safe-storage';
+import { ToolsCard } from '../tools-card/tools-card';
 
 @Component({
   selector: 'app-index-page',
-  imports: [BannerCard, FooterCard, LearningSection, MenuCard, MateriallistModule, FaqCard],
+  imports: [BannerCard, FooterCard, MenuCard, MateriallistModule, ToolsCard],
   templateUrl: './index-page.html',
   styleUrl: './index-page.scss',
 })

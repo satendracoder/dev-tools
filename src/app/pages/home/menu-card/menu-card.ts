@@ -3,7 +3,7 @@ import { MateriallistModule } from '../../../shared/materiallist/materiallist-mo
 import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { SSafeStorage } from '../../../core/service/global/safe-storage/s-safe-storage';
-import { ScButtonComponent } from '../../../shared/components/button/sc-button/sc-button.component';
+import { ScButtonComponent } from '../../../shared/components/ui/button/sc-button/sc-button.component';
 import { STheme } from '../../../core/service/global/theme/s-theme';
 import { CThemeToggle } from '../../../shared/components/c-theme-toggle/c-theme-toggle';
 

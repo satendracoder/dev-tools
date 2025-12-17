@@ -1,34 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { SSeo } from '../../../core/service/other/seo/s-seo';
-import { Router, RouterLink } from '@angular/router';
-import { GlobalContact } from '../../../shared/components/other/global-contact/global-contact';
+import { RouterLink } from '@angular/router';
 import { FooterCard } from '../../home/footer-card/footer-card';
-import { TestimonialsComponent } from '../../home/testimonials/testimonials.component';
 import { MenuCard } from '../../home/menu-card/menu-card';
-import { NgForm } from '@angular/forms';
-import { ToastService } from 'sc-angular-toastify';
-import { SAskme } from '../../../core/service/global/askme/s-askme';
 import { MateriallistModule } from '../../../shared/materiallist/materiallist-module';
-import { LearningSection } from '../../home/learning-section/learning-section';
 
 @Component({
   selector: 'app-c-about-us',
-  imports: [
-    RouterLink,
-    GlobalContact,
-    FooterCard,
-    TestimonialsComponent,
-    MenuCard,
-    MateriallistModule,
-  ],
+  imports: [RouterLink, FooterCard, MenuCard, MateriallistModule],
   templateUrl: './c-about-us.html',
   styleUrl: './c-about-us.scss',
 })
 export class CAboutUs {
   private seo = inject(SSeo);
-  private route = inject(Router);
-  private toaster = inject(ToastService);
-  private sAskapi = inject(SAskme);
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

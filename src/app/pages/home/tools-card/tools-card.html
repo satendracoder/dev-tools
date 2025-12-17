@@ -1,0 +1,35 @@
+@for (category of categories; track category) {
+<div class="technical-skills">
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1 class="title">{{category.title}}</h1>
+                <p class="subtitle">
+                    {{category.description}}
+                </p>
+            </div>
+            <div class="header-right">
+                <app-sc-button variant="primary" label="More view">
+                </app-sc-button>
+            </div>
+        </div>
+
+        <div class="grid">
+            @for (subItem of category.details; track $index) {
+            <div class="category-card">
+                <div class="icon">
+                    <mat-icon>{{subItem.icons}}</mat-icon>
+                </div>
+                <a [routerLink]="subItem?.link">
+                    <div class="info">
+                        <h3>{{ subItem.name }}</h3>
+                        <p>{{ subItem.des }}</p>
+                    </div>
+                </a>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
+}

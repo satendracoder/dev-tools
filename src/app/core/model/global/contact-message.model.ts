@@ -1,11 +1,9 @@
-import { BecomeMember } from './../../../shared/components/other/become-member/become-member';
 export interface ContactMessage {
   name: string;
   email: string;
   mobile: string;
   message: string;
 }
-
 
 export interface BecomeMemberModel {
   name: string;
@@ -16,6 +14,3 @@ export interface BecomeMemberModel {
   website: string;
   message: string;
 }
-
-
-
