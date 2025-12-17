@@ -6,10 +6,12 @@ import { MateriallistModule } from '../../../shared/materiallist/materiallist-mo
 import { SSeo } from '../../../core/service/other/seo/s-seo';
 import { SSafeStorage } from '../../../core/service/global/safe-storage/s-safe-storage';
 import { ToolsCard } from '../tools-card/tools-card';
+import { WhyChoose } from '../why-choose/why-choose';
+import { MetricsRow } from '../metrics-row/metrics-row';
 
 @Component({
   selector: 'app-index-page',
-  imports: [BannerCard, FooterCard, MenuCard, MateriallistModule, ToolsCard],
+  imports: [BannerCard, FooterCard, MenuCard, MateriallistModule, ToolsCard, WhyChoose, MetricsRow],
   templateUrl: './index-page.html',
   styleUrl: './index-page.scss',
 })

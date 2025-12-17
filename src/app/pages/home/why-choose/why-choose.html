@@ -1,0 +1,16 @@
+<section class="why-choose">
+    <div class="container">
+        <h2>Why Choose Our Developer Tools?</h2>
+        <p class="subtitle">
+            Built by developers, for developers — focused on speed, security, and simplicity.
+        </p>
+
+        <div class="grid">
+            <div class="card" *ngFor="let item of items">
+                <span class="icon material-icons">{{ item.icon }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>
