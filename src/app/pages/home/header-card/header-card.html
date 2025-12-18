@@ -1,0 +1,173 @@
+<header class="header">
+    <div class="header-container">
+        <!-- Logo (always visible) -->
+        <div class="logo">
+            <a href="/" class="logo-link">
+                <div class="logo-icon" title="DevTools Hub">
+                    <div class="logo-cube">
+                        <img src="/icons/favicon.svg" alt="DevTools Hub">
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">DevTools Hub</span>
+                    <span class="sub-title">by Satendra Coder</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- DESKTOP NAVIGATION (hidden on mobile) -->
+        <div class="desktop-nav">
+            <!-- Center Navigation -->
+            <nav class="nav-center">
+                <div class="nav-items">
+                    <div *ngFor="let item of menuItems" class="nav-item mega-menu-container"
+                        (mouseenter)="showDropdown(item.key)" (mouseleave)="hideDropdown()">
+                        <a href="#" class="nav-link" [class.active]="activeDropdown === item.key">
+                            {{ item.label }}
+                            <span class="dropdown-arrow">
+                                <svg width="12" height="10" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" [class.show]="activeDropdown === item.key" *ngIf="item.megaMenu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-sections">
+                                    <div class="mega-menu-section" *ngFor="let section of item.megaMenu.sections">
+                                        <h3 class="section-title">{{ section.title }}</h3>
+                                        <ul class="section-items">
+                                            <li *ngFor="let sectionItem of section.items">
+                                                <a [href]="sectionItem.link" class="section-item-link">
+                                                    <span class="item-icon">{{ sectionItem.icon }}</span>
+                                                    <span class="item-label">{{ sectionItem.label }}</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="nav-items">
+                    <a routerLink="" class="nav-link">
+                        Code Validators
+                    </a>
+                </div>
+
+                <div class="nav-items">
+                    <a routerLink="" class="nav-link">
+                        CSS & Layout
+                    </a>
+                </div>
+
+                <div class="nav-items">
+                    <a routerLink="" class="nav-link">
+                        Developer Utilities
+                    </a>
+                </div>
+
+                <div class="nav-items">
+                    <a routerLink="" class="nav-link">
+                        Meta & SEO Tools
+                    </a>
+                </div>
+
+            </nav>
+
+            <!-- Right Navigation -->
+            <nav class="nav-right">
+                <a href="https://satendracoder.com/dsa-sheets" target="_blank" class="nav-link secondary">DSA Sheets</a>
+                <div class="auth-buttons">
+                    <app-c-theme-toggle [selectedTheme]="selectedTheme"
+                        (themeChanged)="onThemeChange($event)"></app-c-theme-toggle>
+                    <app-sc-button label="Get started" routerLink="signup"></app-sc-button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- MOBILE MENU TOGGLE (visible only on mobile) -->
+        <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- MOBILE NAVIGATION (separate overlay) -->
+    <div class="mobile-nav-overlay" [class.show]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+        <div class="mobile-menu" (click)="$event.stopPropagation()">
+            <div class="mobile-menu-header">
+                <div class="mobile-logo">
+                    <div class="logo-icon">
+                        <div class="logo-cube" title="DevTools Hub">
+                            <img src="/icons/favicon.svg" alt="DevTools Hub">
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">DevTools Hub</span>
+                        <span class="sub-title">by Satendra Coder</span>
+                    </div>
+                </div>
+                <button class="mobile-close" (click)="toggleMobileMenu()">
+                    <!-- <span>✕</span> -->
+                </button>
+            </div>
+
+            <div class="mobile-menu-content">
+                <!-- Mobile Navigation Items -->
+                <div class="mobile-nav-section">
+                    <div *ngFor="let item of menuItems" class="mobile-nav-item">
+                        <button class="mobile-nav-link" (click)="toggleMobileDropdown(item.key)"
+                            [class.active]="activeMobileDropdown === item.key">
+                            {{ item.label }}
+                            <span class="mobile-arrow" [class.rotated]="activeMobileDropdown === item.key">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <!-- Mobile Dropdown Content -->
+                        <div class="mobile-dropdown" [class.show]="activeMobileDropdown === item.key"
+                            *ngIf="item.megaMenu">
+                            <div *ngFor="let section of item.megaMenu.sections" class="mobile-dropdown-section">
+                                <h4 class="mobile-section-title">{{ section.title }}</h4>
+                                <ul class="mobile-section-items">
+                                    <li *ngFor="let sectionItem of section.items">
+                                        <a [href]="sectionItem.link" class="mobile-section-link"
+                                            (click)="toggleMobileMenu()">
+                                            <span class="mobile-item-icon">{{ sectionItem.icon }}</span>
+                                            {{ sectionItem.label }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Auth Section -->
+                <div class="mobile-auth-section">
+                    <a href="/teams" class="mobile-teams-link">Code Validators</a>
+                    <a href="/teams" class="mobile-teams-link">CSS & Layout</a>
+                    <a href="/teams" class="mobile-teams-link">Developer Utilities</a>
+                    <a href="/teams" class="mobile-teams-link">Meta & SEO Tools</a>
+                    <a href="https://satendracoder.com/dsa-sheets" target="_blank" class="mobile-teams-link">
+                        DSA Sheets</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

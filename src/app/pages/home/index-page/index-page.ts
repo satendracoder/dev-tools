@@ -8,10 +8,20 @@ import { SSafeStorage } from '../../../core/service/global/safe-storage/s-safe-s
 import { ToolsCard } from '../tools-card/tools-card';
 import { WhyChoose } from '../why-choose/why-choose';
 import { MetricsRow } from '../metrics-row/metrics-row';
+import { HeaderCard } from '../header-card/header-card';
 
 @Component({
   selector: 'app-index-page',
-  imports: [BannerCard, FooterCard, MenuCard, MateriallistModule, ToolsCard, WhyChoose, MetricsRow],
+  imports: [
+    BannerCard,
+    FooterCard,
+    // MenuCard,
+    MateriallistModule,
+    ToolsCard,
+    WhyChoose,
+    MetricsRow,
+    HeaderCard,
+  ],
   templateUrl: './index-page.html',
   styleUrl: './index-page.scss',
 })

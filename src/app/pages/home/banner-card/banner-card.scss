@@ -53,12 +53,12 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: flex;
     position: relative;
     z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-content {
@@ -72,6 +72,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      justify-content: center;
 
       .badge-icon {
         font-size: 1.1rem;
@@ -100,7 +101,8 @@
     .hero-actions {
       display: flex;
       gap: 1rem;
-      margin-bottom: 3rem;
+      align-items: center;
+      justify-content: center;
 
       .btn {
         display: flex;
@@ -162,73 +164,6 @@
         .stat-label {
           font-size: 0.9rem;
           opacity: 0.8;
-        }
-      }
-    }
-  }
-
-  .hero-image {
-    position: relative;
-
-    .image-container {
-      position: relative;
-
-      img {
-        width: 85%;
-        height: 85%;
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-      }
-
-      .floating-card {
-        position: absolute;
-        background: white;
-        padding: 1rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        animation: float 3s ease-in-out infinite;
-
-        .card-icon {
-          font-size: 1.5rem;
-          width: 40px;
-          height: 40px;
-          background: #f3f4f6;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .card-content {
-          display: flex;
-          flex-direction: column;
-
-          .card-title {
-            font-weight: 600;
-            color: #1f2937;
-            font-size: 0.9rem;
-          }
-
-          .card-subtitle {
-            color: #6b7280;
-            font-size: 0.8rem;
-          }
-        }
-
-        &.card-1 {
-          top: 20%;
-          right: -10%;
-          animation-delay: 0s;
-        }
-
-        &.card-2 {
-          bottom: 20%;
-          left: -10%;
-          animation-delay: 1.5s;
         }
       }
     }
