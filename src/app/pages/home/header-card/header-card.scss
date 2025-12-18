@@ -121,6 +121,21 @@
     font-weight: 500;
     font-size: 16px;
     transition: color 0.2s ease;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #3b82f6; // blue line
+      transition: width 0.35s ease;
+    }
+
+    &:hover::after {
+      width: 100%; // text ke according auto width
+    }
 
     &:hover,
     &.active {
@@ -217,10 +232,25 @@
       text-decoration: none;
       font-size: 14px;
       transition: color 0.2s ease;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #3b82f6; // blue line
+        transition: width 0.35s ease;
+      }
+
+      &:hover::after {
+        width: 100%; // text ke according auto width
+      }
 
       &:hover {
         color: #4f46e5;
-
         .item-icon {
           transform: scale(1.1);
         }
@@ -335,6 +365,7 @@
   transition: transform 0.3s ease;
   overflow-y: auto;
   z-index: 1000;
+  padding: auto 20px;
 
   .mobile-nav-overlay.show & {
     transform: translateX(0);
@@ -565,6 +596,7 @@
 
   .header-container {
     gap: 16px;
+    padding: 0 20px !important;
   }
 }
 
